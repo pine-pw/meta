@@ -1,0 +1,20 @@
+{
+  "formatVersion": 1,
+  "packages": [
+    {
+      "name": "Minecraft",
+      "sha256": "345d5fe7f9b885044393d690159a143b37c87ba6d241cc97b636eee50822a7c0",
+      "uid": "net.minecraft"
+    },
+    {
+      "name": "LWJGL 2",
+      "sha256": "cac8b390d995bf00762568ae4f6c8075f5c0a1710e84f47487542244bde4fe5f",
+      "uid": "org.lwjgl"
+    },
+    {
+      "name": "LWJGL 3",
+      "sha256": "2437987ed2b250ac8f73a62e531993e72729c7ffd604936802674a84b73ea577",
+      "uid": "org.lwjgl3"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+name: Sync meta from Mojang
+
+on:
+  schedule:
+    # daily at 03:17 UTC — shortly after Mojang usually publishes snapshots
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Regenerate meta from upstream manifest
+        run: python3 tools/generate_meta.py
+      - name: Validate
+        run: python3 tools/validate_meta.py
+      - name: Commit and push if changed
+        run: |
+          git config user.name "pine-meta-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes since last sync."
+          else
+            git commit -m "chore: sync meta with upstream Mojang manifests"
+            git push
+          fi
