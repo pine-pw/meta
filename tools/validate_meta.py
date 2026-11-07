@@ -78,6 +78,15 @@ def check_version_file(uid, vid, path):
             err(where, f"releaseTime unparseable: {rt!r}")
     if not isinstance(d.get("type"), str) or not d.get("type"):
         warn(where, "missing type")
+    cjm = d.get("compatibleJavaMajors")
+    if cjm is None:
+        if uid == "net.minecraft":
+            warn(where, "missing compatibleJavaMajors (launcher cannot pick a Java runtime)")
+    elif not isinstance(cjm, list) or not cjm or not all(isinstance(m, int) for m in cjm):
+        err(where, f"compatibleJavaMajors must be a non-empty list of ints: {cjm!r}")
+    cjn = d.get("compatibleJavaName")
+    if cjn is not None and (not isinstance(cjn, str) or not cjn):
+        err(where, f"compatibleJavaName must be a non-empty string: {cjn!r}")
     mj = d.get("mainJar")
     if mj is not None:
         art = (mj.get("downloads") or {}).get("artifact") or {}

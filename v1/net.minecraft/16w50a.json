@@ -7,6 +7,10 @@
     "url": "https://piston-meta.mojang.com/v1/packages/c64959fe73672e9b053b157f57b6aba318d0b3b5/1.11.json"
   },
   "assets": "1.11",
+  "compatibleJavaMajors": [
+    8
+  ],
+  "compatibleJavaName": "jre-legacy",
   "formatVersion": 1,
   "libraries": [
     {

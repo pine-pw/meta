@@ -64,6 +64,14 @@ LWJGL3_GROUPS = ("org.lwjgl", "org.lwjglx")
 JVM_ARGS_SKIP_EXACT = {"-cp", "${classpath}"}
 JVM_ARGS_SKIP_PREFIX = ("-Djava.library.path=",)
 
+# Java runtime to recommend when Mojang's manifest says nothing (pre-1.13).
+JAVA_DEFAULT_MAJOR = 8
+JAVA_DEFAULT_NAME = "jre-legacy"
+
+# Java majors that also satisfy a given required major (Mojang ships 16 for the
+# 1.17.x line, but 17 runs those versions fine).
+JAVA_COMPATIBLE_MAJORS = {16: [17]}
+
 # Placeholder tokens the launcher substitutes in +jvmArgs.
 JVM_KNOWN_TOKENS = (
     "${natives_directory}",
@@ -205,6 +213,26 @@ def export_jvm_args(jvm_args):
     return out
 
 
+def export_java_requirement(mojang):
+    """Return (compatibleJavaMajors, compatibleJavaName) for a version.
+
+    Mojang's version JSON carries a "javaVersion" block
+    ({component, majorVersion}) for 1.13+. Older versions omit it and run on
+    the legacy Java 8 runtime. The launcher's OneSix parser reads these as
+    "compatibleJavaMajors" / "compatibleJavaName"; without them it cannot tell
+    which Java a version needs and falls back to whatever Java is selected.
+    """
+    java = mojang.get("javaVersion") or {}
+    major = java.get("majorVersion")
+    name = java.get("component")
+    if not isinstance(major, int):
+        major = JAVA_DEFAULT_MAJOR
+    if not isinstance(name, str) or not name:
+        name = JAVA_DEFAULT_NAME
+    majors = [major] + [m for m in JAVA_COMPATIBLE_MAJORS.get(major, []) if m not in (major,)]
+    return majors, name
+
+
 def uses_start_on_first_thread(jvm_args):
     """Detect the macOS '-XstartOnFirstThread' flag (exported as a trait)."""
     for entry in jvm_args or []:
@@ -273,6 +301,9 @@ def convert_version(entry, mojang):
         out["assets"] = mojang["assets"]
     if "assetIndex" in mojang:
         out["assetIndex"] = mojang["assetIndex"]
+    java_majors, java_name = export_java_requirement(mojang)
+    out["compatibleJavaMajors"] = java_majors
+    out["compatibleJavaName"] = java_name
     if "minimumLauncherVersion" in mojang:
         # keep it only when it is within what the launcher understands
         if mojang["minimumLauncherVersion"] <= 21:

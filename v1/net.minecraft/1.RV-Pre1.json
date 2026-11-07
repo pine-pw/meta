@@ -7,6 +7,10 @@
     "url": "https://piston-meta.mojang.com/v1/packages/14f88f72996933276f8b62f6b678a8ba5b0ba57a/1.9-aprilfools.json"
   },
   "assets": "1.9-aprilfools",
+  "compatibleJavaMajors": [
+    8
+  ],
+  "compatibleJavaName": "jre-legacy",
   "formatVersion": 1,
   "libraries": [
     {

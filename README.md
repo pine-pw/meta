@@ -118,6 +118,8 @@ Minecraft version files are a thin wrapper around Mojang's version JSON:
 | `+jvmArgs` | platform-neutral JVM arguments from `arguments.jvm` (OS-gated and launcher-owned entries such as `-cp` / `-Djava.library.path` are omitted) |
 | `+traits` | exported feature flags: `feature:<name>` for each feature used by argument rules, plus `FirstThreadOnMacOS` when the version needs `-XstartOnFirstThread` |
 | `assetIndex`, `assets` | asset index metadata (objects still download from Mojang's resource CDN) |
+| `compatibleJavaMajors` | Java major versions the game runs on, from Mojang's `javaVersion.majorVersion` (e.g. `[25]`; `[16, 17]` for the 1.17.x line). Older versions default to `[8]` |
+| `compatibleJavaName` | Mojang runtime component name, from `javaVersion.component` (e.g. `java-runtime-epsilon`, `jre-legacy`) |
 | `mainJar` | the client jar: `com.mojang:minecraft:<version>:client` with `downloads.artifact {url, sha1, size}` |
 | `libraries` | Mojang-format libraries, **minus** everything in the `org.lwjgl*` groups |
 | `requires` | `org.lwjgl3` (modern) or `org.lwjgl` (legacy) with a `suggests` version |
