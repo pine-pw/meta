@@ -23,6 +23,10 @@
     "url": "https://piston-meta.mojang.com/v1/packages/313aca588bd9f16df82e4e4695761c58e18b3417/13.json"
   },
   "assets": "13",
+  "compatibleJavaMajors": [
+    17
+  ],
+  "compatibleJavaName": "java-runtime-gamma",
   "formatVersion": 1,
   "libraries": [
     {

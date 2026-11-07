@@ -16,6 +16,10 @@
     "url": "https://piston-meta.mojang.com/v1/packages/a87b47dbe848dcb895ddf6e6958f48a52ce7c576/2.json"
   },
   "assets": "2",
+  "compatibleJavaMajors": [
+    17
+  ],
+  "compatibleJavaName": "java-runtime-gamma",
   "formatVersion": 1,
   "libraries": [
     {

@@ -25,6 +25,10 @@
     "url": "https://piston-meta.mojang.com/v1/packages/0171a264a06cb3227a1f317c89554418b3db6935/31.json"
   },
   "assets": "31",
+  "compatibleJavaMajors": [
+    25
+  ],
+  "compatibleJavaName": "java-runtime-epsilon",
   "formatVersion": 1,
   "libraries": [
     {

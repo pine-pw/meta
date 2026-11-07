@@ -23,6 +23,10 @@
     "url": "https://piston-meta.mojang.com/v1/packages/ad0635a0fd244f5140c680e0a4e44fe42ea0cd9a/18.json"
   },
   "assets": "18",
+  "compatibleJavaMajors": [
+    21
+  ],
+  "compatibleJavaName": "java-runtime-delta",
   "formatVersion": 1,
   "libraries": [
     {
