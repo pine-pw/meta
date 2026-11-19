@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "Minecraft",
-      "sha256": "c42f49d1abd973da1f7546459d7bddf438b7e64537924cf98831df9e167706cf",
+      "sha256": "96df916e9981f2f7e8627b78251230bafe33de9383757d5c6d6ca136eb91b41e",
       "uid": "net.minecraft"
     },
     {
