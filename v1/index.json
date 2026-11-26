@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "Minecraft",
-      "sha256": "1053f08a7f59a0aff404164830f938db9fb223238db045926965f69dadc57252",
+      "sha256": "9d7ba5b070aa75b1ae701556732db660e3430bcd2d5cad8bf6eb51620b28340f",
       "uid": "net.minecraft"
     },
     {
@@ -13,7 +13,7 @@
     },
     {
       "name": "LWJGL 3",
-      "sha256": "c511945631e37b186cf4d234ee912479ddcb555f4710d38ff362caed43478fd8",
+      "sha256": "01c575fa4a6b3948e30d8af4a15f3d99e9f42e8c619c8065386bb3272d140bd4",
       "uid": "org.lwjgl3"
     }
   ]

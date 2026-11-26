@@ -50,7 +50,20 @@
       ],
       "recommended": false,
       "releaseTime": "2026-07-16T13:59:30+00:00",
-      "sha256": "7039de6fe8108dc75345a224a8748728fe9322b52041e84e628c8a8d36e51545",
+      "sha256": "9e3e98638260d7f146ff338ae89d808f5afc1ddd17e0b37751d1df153662a059",
+      "type": "release",
+      "version": "3.4.1-mojang-2.15.0.3",
+      "volatile": true
+    },
+    {
+      "conflicts": [
+        {
+          "uid": "org.lwjgl"
+        }
+      ],
+      "recommended": false,
+      "releaseTime": "2026-07-16T13:59:30+00:00",
+      "sha256": "755c5f085630fb95a2b125325e93b1d04eaafa2d2e91d2ac79845793585b73c2",
       "type": "release",
       "version": "3.4.1",
       "volatile": true
