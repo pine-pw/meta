@@ -10,8 +10,8 @@
         }
       ],
       "recommended": false,
-      "releaseTime": "2026-11-24T12:48:31+00:00",
-      "sha256": "aa1f17bfd728bc93ae8fd638357e84ef56354c8eae3c2a2d6cfed23591ab1c7a",
+      "releaseTime": "2026-11-27T10:00:38+00:00",
+      "sha256": "31697969b4e7e541c0ea9f66917c19a03d1d964a2a4f6cec4da1ed8d00b84839",
       "type": "release",
       "version": "3.4.3-mojang-2.15.0",
       "volatile": true
@@ -23,10 +23,23 @@
         }
       ],
       "recommended": false,
-      "releaseTime": "2026-11-24T12:48:31+00:00",
-      "sha256": "cd8cbdcb9a477551cd76f5ada863c3d73798e3b0360954ddc16ab356834eb032",
+      "releaseTime": "2026-11-27T10:00:38+00:00",
+      "sha256": "27d887a3711adb7b5ba3da64db176a1ead8f7d48118ec69002a7240e7a82c380",
       "type": "release",
       "version": "3.4.3",
+      "volatile": true
+    },
+    {
+      "conflicts": [
+        {
+          "uid": "org.lwjgl"
+        }
+      ],
+      "recommended": false,
+      "releaseTime": "2026-09-04T11:54:52+00:00",
+      "sha256": "0ce35e97abb81326eeef5daab93b0e53412cf8399360df5a908533f5f02a165f",
+      "type": "release",
+      "version": "3.4.3-mojang-2.15.0.3",
       "volatile": true
     },
     {
